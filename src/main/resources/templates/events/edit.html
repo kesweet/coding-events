@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<header th:replace="fragments :: header"></header>
+
+<form method="post" th:action="@{/events/edit}">
+    <label th:text="${title}">Event Name:</label>
+    <input type="text" th:value="${event.name}" name="eventName"/>
+    <label>Event Description:</label>
+    <input type="text area" th:value="${event.description}" name="eventDescription"/>
+    <input type="hidden" th:value="${event.id}" name="eventId" />
+    <input type="submit" value="Edit Event"/>
+</form>
+
+</body>
+</html>
